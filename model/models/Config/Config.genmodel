@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/model/src/main/java/" modelPluginID="config" modelName="Config"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Config.ecore</foreignModel>
+  <genPackages prefix="Config" basePackage="ovgu.pave.model" disposableProviderFactory="true"
+      contentTypeIdentifier="" ecorePackage="Config.ecore#/">
+    <genClasses ecoreClass="Config.ecore#//Config">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/inputFolder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Config.ecore#//Config/scenario"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/inputFilename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/configPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/outputFolder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/runs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/experiments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Config/threadCount"/>
+    </genClasses>
+    <genClasses ecoreClass="Config.ecore#//Scenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Config.ecore#//Scenario/requestConstraints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/planningPeriodBegin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/planningPeriodLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/numberOfRequests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/numberOfVehicles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/travelTimeFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/vehicleCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/randomSeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//Scenario/area"/>
+    </genClasses>
+    <genClasses ecoreClass="Config.ecore#//RequestConstraints">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//RequestConstraints/maxWaitingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//RequestConstraints/detourFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//RequestConstraints/serviceDuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Config.ecore#//RequestConstraints/minTravelTime"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

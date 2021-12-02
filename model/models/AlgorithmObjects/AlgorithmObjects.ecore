@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="algorithmObjects" nsURI="ovgu.pave.algorithmObjects" nsPrefix="alg">
+  <eClassifiers xsi:type="ecore:EDataType" name="Route" instanceClassName="ovgu.pave.model.solution.Route"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RouteElement" instanceClassName="ovgu.pave.model.solution.RouteElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertionOption">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="costs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstActivityIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondActivityIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="route" eType="#//Route"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Requests" instanceClassName="ovgu.pave.model.input.Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertionInformation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="request" eType="#//Requests"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="score" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insertionOptions" upperBound="-1"
+        eType="#//InsertionOption"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DrivingTimeInformation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="drivingTimeSlack" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Slacks">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Route" eType="#//Route"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeSlack" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilizationSlack" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="drivingTimeSlack" unique="false"
+        upperBound="-1" eType="#//DrivingTimeInformationList"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DrivingTimeInformationList" instanceClassName="java.util.List&lt;ovgu.pave.model.algorithmObjects.DrivingTimeInformation>"/>
+</ecore:EPackage>
